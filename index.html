@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Flying Bird Animation</title>
+ 
+</head>
+<body>
+  <div class="sun"></div>
+  <div class="grass"></div>
+
+  <div class="bird" style="top: 30%; left: -100px;">
+    <div class="body"></div>
+    <div class="wing"></div>
+    <div class="eye"></div>
+    <div class="beak"></div>
+  </div>
+  <div class="bird" style="top: 50%; left: -100px;">
+    <div class="body"></div>
+    <div class="wing"></div>
+    <div class="eye"></div>
+    <div class="beak"></div>
+  </div>
+  <div class="bird" style="top: 70%; left: -100px;">
+    <div class="body"></div>
+    <div class="wing"></div>
+    <div class="eye"></div>
+    <div class="beak"></div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const birds = document.querySelectorAll('.bird');
+
+      // Randomize each bird's flight path a bit
+      setInterval(() => {
+        birds.forEach(bird => {
+          const randomHeight = Math.random() * window.innerHeight * 0.8;
+          bird.style.top = `${randomHeight}px`;
+        });
+      }, 5000);
+    });
+  </script>
+</body>
+</html>
